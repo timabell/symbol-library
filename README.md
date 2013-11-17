@@ -3,8 +3,14 @@ Symbol library
 
 A website for managing the symbol libraries used by https://launchpad.net/communication
 
-License
-=======
+Where?
+======
+
+* Code: <https://github.com/timabell/symbol-library>
+* Live site: <http://symbol-library.timwise.co.uk/>
+
+License - Affero GPL v3
+=======================
 
 Copyright (C) 2013 Tim Abell <tim@timwise.co.uk> and other contributors
 

@@ -1,4 +1,5 @@
 Feature: Share a library torrent
 
 	Scenario: Add torrent listing
-		I should be able to add a torrent
+		When I add a torrent
+		Then I should see the torrent listed

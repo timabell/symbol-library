@@ -8,6 +8,22 @@
 </head>
 <body>
 
+<!--
+  Assist screen reader users by allowing bypassing of navigation section
+    http://www.onevoiceict.org/tools/tools/seven-steps/add-jump-content-link
+-->
+<a href="#content">jump to content</a>
+
+<nav>
+  <ul>
+    <li><%= link_to "About this site", root_path %></li>
+    <li><%= link_to "Library downloads", torrents_path %></li>
+  </ul>
+</nav>
+
+<!-- jump link for bypassing navigation (above) -->
+<a id="content"></a>
+
 <%= yield %>
 
 <footer>

@@ -6,7 +6,7 @@ I did start writing [cucumber](http://cukes.info) tests for this project but so 
 Mission
 =======
 
-See [README.md]
+See the [project readme](README.md)
 
 Site usage policies
 ===================

@@ -9,6 +9,11 @@ Where?
 * Code: <https://github.com/timabell/symbol-library>
 * Live site: <http://symbol-library.timwise.co.uk/>
 
+Plan of action
+==============
+
+* See [plan](plan.md)
+
 License - Affero GPL v3
 =======================
 

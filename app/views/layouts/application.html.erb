@@ -13,13 +13,18 @@
   Assist screen reader users by allowing bypassing of navigation section
     http://www.onevoiceict.org/tools/tools/seven-steps/add-jump-content-link
 -->
-<a href="#content">jump to content</a>
+<a href="#content" class="sr-only">jump to content</a>
 
-<nav>
-  <ul>
-    <li><%= link_to "About this site", root_path %></li>
-    <li><%= link_to "Library downloads", torrents_path %></li>
-  </ul>
+<nav class="navbar navbar-inverse" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Symbol Library Sharing</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><%= link_to "About this site", root_path %></li>
+      <li><%= link_to "Library downloads", torrents_path %></li>
+    </ul>
+  </div>
 </nav>
 
 <!-- jump link for bypassing navigation (above) -->

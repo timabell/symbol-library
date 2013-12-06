@@ -30,11 +30,21 @@
 <!-- jump link for bypassing navigation (above) -->
 <a id="content"></a>
 
+<div id="wrap">
+  <div class="container">
 <%= yield %>
+  </div>
+</div>
 
-<footer>
-  <hr/>
-  <p>This site is licensed under the <a href="http://www.gnu.org/licenses/agpl.html">AGPL v3</a>. <a href="https://github.com/timabell/symbol-library">Source</a></p>
+<footer id="footer">
+  <div class="container">
+    <hr/>
+    <p class="text-muted">
+      This site is licensed under the
+      <a href="http://www.gnu.org/licenses/agpl.html">AGPL v3</a>.
+      <a href="https://github.com/timabell/symbol-library">Source</a>
+    </p>
+  </div>
 </footer>
 </body>
 </html>

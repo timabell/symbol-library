@@ -1,5 +1,9 @@
-<h1>Available libraries</h1>
-<ul>
-	<li><a href="/torrents/Symbols-v0.1.zip.torrent">Symbols-v0.1</a></li>
-	<li><a href="/torrents/Symbols-v0.4.zip.torrent">Symbols-v0.4</a></li>
-</ul>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Filename:</strong>
+  <%= @torrent.filename %>
+</p>
+
+<%= link_to 'Edit', edit_torrent_path(@torrent) %> |
+<%= link_to 'Back', torrents_path %>

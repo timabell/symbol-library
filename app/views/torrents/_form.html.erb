@@ -1,21 +1,14 @@
-<%= form_for(@torrent) do |f| %>
-  <% if @torrent.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@torrent.errors.count, "error") %> prohibited this torrent from being saved:</h2>
-
-      <ul>
-      <% @torrent.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @torrent, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :filename, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :filename, :class => 'text_field' %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :filename %><br>
-    <%= f.text_field :filename %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                torrents_path, :class => 'btn' %>
   </div>
 <% end %>

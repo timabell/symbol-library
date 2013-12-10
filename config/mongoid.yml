@@ -2,3 +2,10 @@ production:
   sessions:
     default:
       uri: <%= ENV['MONGO_URL'] %>
+
+development:
+  sessions:
+    default:
+      database: symbol_library_development
+      hosts:
+        - localhost:27017

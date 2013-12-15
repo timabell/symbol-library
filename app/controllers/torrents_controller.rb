@@ -22,6 +22,7 @@ class TorrentsController < ApplicationController
   # POST /torrents
   def create
     @torrent = Torrent.new(torrent_params)
+    @torrent.user = current_user
 
     if @torrent.save
       redirect_to @torrent, notice: 'Torrent was successfully created.'

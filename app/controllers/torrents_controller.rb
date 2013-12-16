@@ -1,5 +1,6 @@
 class TorrentsController < ApplicationController
   before_action :set_torrent, only: [:show, :edit, :update, :destroy]
+  before_action :require_login, only: [:new, :create, :edit, :update, :destroy]
 
   # GET /torrents
   def index
@@ -55,5 +56,12 @@ class TorrentsController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def torrent_params
       params.require(:torrent).permit(:filename)
+    end
+
+    def require_login
+      unless current_user
+        flash[:error] = "You must be logged in to do this"
+        redirect_to new_user_session_path
+      end
     end
 end

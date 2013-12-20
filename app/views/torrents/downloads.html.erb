@@ -1,0 +1,20 @@
+<%- model_class = Torrent -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:filename) %></th>
+      <th>Owner</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @torrents.each do |torrent| %>
+      <tr>
+        <td><%= link_to torrent.filename, torrent_path(torrent) %></td>
+        <td><%= torrent.user.email %></a>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,9 +1,14 @@
 class TorrentsController < ApplicationController
-  before_action :set_torrent, only: [:show, :edit, :update, :destroy]
+  before_action :set_torrent, only: [:show, :edit, :update, :destroy, :download]
   before_action :require_login, only: [:new, :create, :edit, :update, :destroy]
+  before_action :require_ownership, only: [:edit, :update, :destoy]
 
   # GET /torrents
   def index
+    @torrents = Torrent.all
+  end
+
+  def downloads
     @torrents = Torrent.all
   end
 
@@ -26,7 +31,7 @@ class TorrentsController < ApplicationController
     @torrent.user = current_user
 
     if @torrent.save
-      redirect_to @torrent, notice: 'Torrent was successfully created.'
+      redirect_to [current_user, @torrent], notice: 'Torrent was successfully created.'
     else
       render action: 'new'
     end
@@ -35,7 +40,7 @@ class TorrentsController < ApplicationController
   # PATCH/PUT /torrents/1
   def update
     if @torrent.update(torrent_params)
-      redirect_to @torrent, notice: 'Torrent was successfully updated.'
+      redirect_to [current_user, @torrent], notice: 'Torrent was successfully updated.'
     else
       render action: 'edit'
     end
@@ -44,7 +49,7 @@ class TorrentsController < ApplicationController
   # DELETE /torrents/1
   def destroy
     @torrent.destroy
-    redirect_to torrents_url, notice: 'Torrent was successfully destroyed.'
+    redirect_to user_torrents_url, notice: 'Torrent was successfully destroyed.'
   end
 
   private
@@ -63,5 +68,10 @@ class TorrentsController < ApplicationController
         flash[:error] = "You must be logged in to do this"
         redirect_to new_user_session_path
       end
+    end
+
+    def require_ownership
+      #TODO replace with 403
+      throw "denied" unless @torrent.user_id == current_user.id
     end
 end

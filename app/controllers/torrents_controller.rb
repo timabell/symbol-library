@@ -1,7 +1,7 @@
 class TorrentsController < ApplicationController
   before_action :set_torrent, only: [:show, :edit, :update, :destroy, :download]
   before_action :require_login, only: [:new, :create, :edit, :update, :destroy]
-  before_action :require_ownership, only: [:edit, :update, :destoy]
+  before_action :require_ownership, only: [:edit, :update, :destroy]
 
   # GET /torrents
   def index

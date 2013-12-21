@@ -11,3 +11,8 @@ puts 'app setup env:'
 puts ENV.inspect
 puts "ENV['SECRET_TOKEN'] #{ENV['SECRET_TOKEN']}"
 puts
+ SymbolLibrary::Application.config.after_initialize do
+        puts 'after initialize~~~~~~~~~~~~~~~~~~~~~~~~~~~~'
+        puts ENV.inspect
+      end
+      puts 'foot'

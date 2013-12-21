@@ -3,7 +3,6 @@ class TorrentsController < ApplicationController
   before_action :require_login, only: [:new, :create, :edit, :update, :destroy]
   before_action :require_ownership, only: [:edit, :update, :destroy]
 
-  # GET /torrents
   def index
     @torrents = Torrent.all
   end
@@ -12,20 +11,16 @@ class TorrentsController < ApplicationController
     @torrents = Torrent.all
   end
 
-  # GET /torrents/1
   def show
   end
 
-  # GET /torrents/new
   def new
     @torrent = Torrent.new
   end
 
-  # GET /torrents/1/edit
   def edit
   end
 
-  # POST /torrents
   def create
     @torrent = Torrent.new(torrent_params)
     @torrent.user = current_user
@@ -37,7 +32,6 @@ class TorrentsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /torrents/1
   def update
     if @torrent.update(torrent_params)
       redirect_to [current_user, @torrent], notice: 'Torrent was successfully updated.'
@@ -46,14 +40,12 @@ class TorrentsController < ApplicationController
     end
   end
 
-  # DELETE /torrents/1
   def destroy
     @torrent.destroy
     redirect_to user_torrents_url, notice: 'Torrent was successfully destroyed.'
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_torrent
       @torrent = Torrent.find(params[:id])
     end

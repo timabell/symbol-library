@@ -10,7 +10,6 @@ Devise.setup do |config|
   # else
       config.secret_key = ENV['DEVISE_SECRET_KEY']
       puts ENV.inspect
-      puts RAILS_ENV.inspect
   # end
 
   # ==> Mailer Configuration

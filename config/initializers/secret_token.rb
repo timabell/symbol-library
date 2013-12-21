@@ -5,3 +5,6 @@ SymbolLibrary::Application.config.secret_token =
   else
       ENV['SECRET_TOKEN']
   end
+puts 'app setup env:'
+puts ENV.inspect
+puts

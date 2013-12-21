@@ -4,7 +4,7 @@ class TorrentsController < ApplicationController
   before_action :require_ownership, only: [:edit, :update, :destroy]
 
   def index
-    @torrents = Torrent.all
+    @torrents = Torrent.where(user_id: current_user.id)
   end
 
   def downloads

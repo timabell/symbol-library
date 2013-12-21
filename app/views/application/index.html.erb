@@ -1,0 +1,20 @@
+<h1>Symbol library sharing site</h1>
+<p>Welcome to this site for sharing symbol libraries for use by <a href="https://launchpad.net/communication">communication book programs</a>.</p>
+
+<h2>Get a symbol library</h2>
+<p>Download an existing symbol library from the <%= link_to "library downloads", torrents_path %> page.</p>
+
+<h2>Contribute a symbol library</h2>
+<p>Contribute your own symbol libraries for others to use by
+<% if current_user %>
+	<%= link_to "sharing a torrent", user_torrents_path(current_user) %>.
+<% else %>
+	sharing a torrent. First you will need to <%= link_to "sign-in", new_user_session_path %> or <%= link_to "register", new_user_registration_path %>.
+<% end %>
+
+<h2>Help</h2>
+<p>If you need any help, have any question or just want to let me know what you think of the site, drop me a note on <a href="mailto:tim@timwise.co.uk">tim@timwise.co.uk</a></p>
+
+<h2>About</h2>
+<p>This site is a work in progress. Development and code can be found at <a href="https://github.com/timabell/symbol-library">https://github.com/timabell/symbol-library</a>.</p>
+<p>Hosted on <a target="_blank" href="http://www.heroku.com/">heroku.com</a> and <a target="_blank" href="http://www.mongohq.com/">mongohq.com</a></p>

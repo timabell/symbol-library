@@ -9,8 +9,8 @@ Devise.setup do |config|
   #     config.secret_key = ('x' * 128)
   # else
       config.secret_key = ENV['DEVISE_SECRET_KEY']
-      puts "config.secret_key = #{ENV['DEVISE_SECRET_KEY']}"
-      puts "SECRET_TOKEN = #{ENV['SECRET_TOKEN']}"
+      puts ENV.inspect
+      puts RAILS_ENV.inspect
   # end
 
   # ==> Mailer Configuration

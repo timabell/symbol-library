@@ -9,7 +9,6 @@ Devise.setup do |config|
   #     config.secret_key = ('x' * 128)
   # else
       config.secret_key = ENV['DEVISE_SECRET_KEY']
-      config.secret_key = 'abc123lkjhsdlksjadhsadflkjh'
       puts 'devise setup env:'
       puts ENV.inspect
       puts "ENV['SECRET_TOKEN'] #{ENV['SECRET_TOKEN']}"

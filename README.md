@@ -14,6 +14,32 @@ Plan of action
 
 * See [plan](plan.md)
 
+Production configuration
+========================
+
+This app is designed for hosting on <http://heroku.com> and as such tries to be a <http://12factor.net/> app.
+
+Environment variables that must be set:
+
+* DEVISE_SECRET_KEY
+* SECRET_TOKEN
+* MONGO_URL
+
+Secret keys can be set with:
+
+	heroku config:set SECRET_TOKEN=`rake secret`
+	heroku config:set DEVISE_SECRET_KEY=`rake secret`
+
+The mongo url can be obtained from <http://mongohq.com>
+
+Due to the use of Devise <https://github.com/plataformatec/devise> for authenticating uses, the DEVISE_SECRET_TOKEN environment variable has to be available at build-time; this is not a default in heroku as it violates one of the 12 factor rules.
+
+Enable user-env-compile <https://devcenter.heroku.com/articles/labs-user-env-compile>
+
+	heroku labs:enable user-env-compile   # Run this from app directory
+
+The `heroku` command is provided by the heroku toolbelt <https://toolbelt.heroku.com/>
+
 License - Affero GPL v3
 =======================
 

@@ -5,7 +5,7 @@ SymbolLibrary::Application.config.secret_token =
       ('x' * 30) # meets minimum requirement of 30 chars long
   else
     puts '~~~~~~~~~~prod~~~~~~~~~~'
-      ENV['SECRET_TOKEN']
+    ENV['SECRET_TOKEN']
   end
 puts 'app setup env:'
 puts ENV.inspect

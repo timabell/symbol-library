@@ -7,4 +7,5 @@ SymbolLibrary::Application.config.secret_token =
   end
 puts 'app setup env:'
 puts ENV.inspect
+      puts "ENV['SECRET_TOKEN'] #{ENV['SECRET_TOKEN']}"
 puts

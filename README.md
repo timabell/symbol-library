@@ -40,6 +40,11 @@ Enable user-env-compile <https://devcenter.heroku.com/articles/labs-user-env-com
 
 The `heroku` command is provided by the heroku toolbelt <https://toolbelt.heroku.com/>
 
+Local development
+=================
+
+* install mongo
+
 License - Affero GPL v3
 =======================
 

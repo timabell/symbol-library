@@ -52,7 +52,7 @@ class TorrentsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def torrent_params
-      params.require(:torrent).permit(:filename)
+      params.require(:torrent).permit(:name)
     end
 
     def require_login

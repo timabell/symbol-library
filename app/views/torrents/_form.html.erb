@@ -1,8 +1,12 @@
 <%= form_for [current_user, @torrent], :html => { :class => 'form-horizontal' } do |f| %>
   <div class="control-group">
-    <%= f.label :filename, :class => 'control-label' %>
+    <%= f.label :name, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :filename, :class => 'text_field' %>
+      <%= f.text_field :name, :class => 'text_field' %>
+    </div>
+    <%= f.label :magnet, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :magnet, :class => 'text_field' %>
     </div>
   </div>
 

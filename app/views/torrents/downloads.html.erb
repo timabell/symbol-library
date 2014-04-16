@@ -5,14 +5,14 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:filename) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
       <th>Owner</th>
     </tr>
   </thead>
   <tbody>
     <% @torrents.each do |torrent| %>
       <tr>
-        <td><%= link_to torrent.filename, torrent_path(torrent) %></td>
+        <td><%= link_to torrent.name, torrent_path(torrent) %></td>
         <td><%= torrent.user.email %></a>
       </tr>
     <% end %>

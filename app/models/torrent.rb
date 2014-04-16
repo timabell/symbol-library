@@ -4,5 +4,6 @@ class Torrent
 
   belongs_to :user
 
-  field :filename, type: String
+  field :name, type: String
+  field :magnet, type: String
 end
